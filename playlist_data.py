@@ -8,5 +8,10 @@ data = json.load(f)
 
 playlist_data = data['items']
 
-for i in range(len(playlist_data)):
-    print(playlist_data[i].get('name'))
+def get_info():
+    track_data = [{'name': p.get('name'), 'image': p['images'][0]['url'], 'href': p['tracks']['href']}
+        for p in playlist_data]
+    
+    return track_data
+
+print(get_info())

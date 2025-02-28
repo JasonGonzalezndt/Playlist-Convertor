@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ playlist_name }} - Tracks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .track-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .track {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            width: 250px;
+            text-align: left;
+        }
+        .track img {
+            width: 64px;
+            height: 64px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ playlist_name }}</h1>
+    <div class="track-list">
+        {% for track in track_data_array[:25] %}
+        <div class="track">
+            <img src="{{ track.image }}" alt="Album Art">
+            <p><strong>{{ track.name }}</strong> - {{ track.artist }}</p>
+            <p>Added by: {{ track.added_by }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
