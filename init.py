@@ -1,7 +1,7 @@
 import requests
 
-client_id = "31f021cb56984c9b8103e5046b8dc836"
-client_secret = "733f3230209c4b84bd1c380e78e51fdd"
+client_id = "ClIENT_ID"
+client_secret = "CLIENT_SECRET"
 
 #Use the client id and client secret to request the access token needed to reach specific API end points. At one point we will use this for the OAuth2.0 method for a more semi-permanent authorization
 def get_access_token(client_id, client_secret):
